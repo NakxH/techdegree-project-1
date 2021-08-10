@@ -15,19 +15,15 @@ const quotes = [
   {
     quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
     source: 'Nelson Mandela',
-    year: 2005,
-    citation: 'Hubspot.com'
   },
   {
     quote: 'If life were predictable it would cease to be life, and be without flavor.',
     source: 'Eleanor Roosevelt',
     year: 1957,
-    citation: 'The Autobiography of Eleanor Roosevelt'
   },
   {
     quote: 'Tell me and I forget. Teach me and I remember. Involve me and I learn.',
     source: 'Benjamin Franklin',
-    year: 1777,
     citation: 'Quotations of Benjamin Franklin',
     tags: 'Education'
   },
@@ -52,22 +48,52 @@ const quotes = [
   }
 ];
 
-
 /***
  * `getRandomQuote` function
 ***/
 
+function getRandomQuote () {
 
+  const randomNumber = Math.floor (Math.random() * quotes.length);
+
+  return quotes[randomNumber];
+
+}
 
 /***
  * `printQuote` function
 ***/
 
+function printQuote () {
 
+  const randomQuote = getRandomQuote();
 
+  let html = `
+    <p class="quote">${randomQuote.quote}</p>
+    <p class="source">${randomQuote.source}
+  `;
+  
+  if ( randomQuote.hasOwnProperty('year') ) {
+    html += `
+    <span class="year">${randomQuote.year}</span>
+    `;
+  }
+
+  if ( randomQuote.hasOwnProperty('citation') ) {
+    html += `
+    <span class="citation">${randomQuote.citation}</span>
+    `;
+  }
+  
+  html += '</p>'
+  console.log(html);
+
+}
+
+printQuote();
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+// document.getElementById('load-quote').addEventListener("click", printQuote, false);
