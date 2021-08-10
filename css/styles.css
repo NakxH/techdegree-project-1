@@ -105,6 +105,9 @@ h1 {
   font-style: italic;
 }
 
+.tags {
+ font-style: italic;
+}
 
 .tags:before {
   content: ", ";

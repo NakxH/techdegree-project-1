@@ -92,11 +92,11 @@ function printQuote() {
 
 /* This is where I found the information for the setInterval function.
   https://stackoverflow.com/questions/32913226/auto-refresh-page-every-30-seconds#:~:text=If%20you%20really%20want%20to,(function%20()%20%7B%20window.
-  This function refreshes the printQuote function every 2000ms
+  This function refreshes the printQuote function every 7000ms
 */
 window.setInterval(function () {
   printQuote();
-}, 2000);
+}, 7000);
 
 // This function returns a random number between 0 and 255 
 function randomColorNumber() {
