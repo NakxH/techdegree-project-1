@@ -105,6 +105,12 @@ h1 {
   font-style: italic;
 }
 
+
+.tags:before {
+  content: ", ";
+  font-style: normal;
+}
+
 .citation:before {
   content: ", ";
   font-style: normal;
